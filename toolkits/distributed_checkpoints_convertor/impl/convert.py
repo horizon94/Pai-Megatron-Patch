@@ -24,9 +24,9 @@ from functools import partial
 # NOTE: Some models (e.g., moonlight) adopts a customed tokenizer, which 
 # requires trust_remote_code=True
 from megatron.training import global_vars
-from megatron.training.tokenizer.tokenizer import _HuggingFaceTokenizer
-if 'trust_remote_code' not in inspect.signature(_HuggingFaceTokenizer.__init__).parameters:
-    global_vars.build_tokenizer = partial(global_vars.build_tokenizer, trust_remote_code=True)
+# from megatron.training.tokenizer.tokenizer import _HuggingFaceTokenizer
+# if 'trust_remote_code' not in inspect.signature(_HuggingFaceTokenizer.__init__).parameters:
+#     global_vars.build_tokenizer = partial(global_vars.build_tokenizer, trust_remote_code=True)
 from megatron.training.initialize import initialize_megatron
 from megatron.training import get_args
 
